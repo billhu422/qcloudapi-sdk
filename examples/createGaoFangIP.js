@@ -64,25 +64,25 @@ var capi = new Capi({
 
 
 var x = {
-    'region': 'sh'
+    'region': 4,
+    'timeSpan' : 1,
+    'timeUnit' : 'm',
+    'goodsNum' : 1,
+    'bandwidth' : 10,
+    'elastic' : 1
   }
 var params = assign({    Region: 'sh',
-    Action: 'NS.BGPIP.GetServicePacks'},x)
+    Action: 'BgpipCreateResource'},x)
 
 capi.request(params, {
-    serviceType: 'csec'
+    serviceType: 'bgpip'
 }, function(error, data) {
     console.log(JSON.stringify(data,4,4));
 })
 
-var qs = capi.generateQueryString({
-    Region: 'sh',
-    Action: 'NS.BGPIP.GetServicePacks',
-    'region': 'sh',
-    'paging.index': 0,
-    'paging.count': 1
-}, {
-    serviceType: 'csec'
+var qs = capi.generateQueryString(
+    params, {
+    serviceType: 'bgpip'
 },function(error,data){
 	console.log(JSON.stringify(data)); 
 })

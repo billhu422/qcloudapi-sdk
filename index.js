@@ -60,12 +60,16 @@ QcloudApi.prototype.generateQueryString = function(data, opts) {
         Nonce: Math.round(Math.random() * 65535),
         RequestClient: 'SDK_NODEJS_' + packageJSON.version //非必须, sdk 标记
     }, data)
+//   console.log("param");
+//   console.log(param);
 
     param = dotQs.flatten(param)
-
+//   console.log('flatten param');
+//   console.log(param);
     var keys = Object.keys(param)
+//    console.log('keys');  
+//    console.log(keys);  
     var qstr = '', signStr
-
     var host = this._getHost(opts)
     var method = (opts.method || defaults.method).toUpperCase()
 
