@@ -1,8 +1,9 @@
 var Capi = require('../../qcloudapi-sdk')
 var randomstring = require('randomstring')
+var config = require('./config')
 var capi = new Capi({
-    SecretId: 'AKIDJUTGrGYTQAlGvRoBKJ8mEbmnMp7LnRDn',
-    SecretKey: 'hEammaiiXTGzXv9C9zdIrXO4Zs21xAD8',
+    SecretId: config.qcloud.SecretId,
+    SecretKey: config.qcloud.SecretKey,
     serviceType: 'account'
 })
 var instanceChargePrepaid =  {

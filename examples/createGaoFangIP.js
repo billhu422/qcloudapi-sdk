@@ -1,6 +1,6 @@
 var Capi = require('../../qcloudapi-sdk')
 var assign = require('object-assign')
-
+var config = require('./config')
 
 var genQueryStr = function(params) {
     opts = opts || this.defaults
@@ -55,10 +55,8 @@ var genQueryStr = function(params) {
 }
 
 var capi = new Capi({
-//    SecretId: 'AKIDJUTGrGYTQAlGvRoBKJ8mEbmnMp7LnRDn',
-//    SecretKey: 'hEammaiiXTGzXv9C9zdIrXO4Zs21xAD8',
-    SecretId: 'AKID2sYy826AMHzTjoMHemobCcXHm47vLoul',
-    SecretKey: 'mLjxwgDVebNtEKEvPeePuBCxTjlopfGg',
+    SecretId: config.qcloud.SecretId,
+    SecretKey: config.qcloud.SecretKey,
     serviceType: 'account'
 })
 

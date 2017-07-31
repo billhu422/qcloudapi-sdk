@@ -1,5 +1,4 @@
 var Capi = require('../../qcloudapi-sdk')
-
 var config = require('./config')
 var capi = new Capi({
     SecretId: config.qcloud.SecretId,
@@ -9,20 +8,13 @@ var capi = new Capi({
 
 capi.request({
     Region: 'bj',
-    Action: 'NS.BGPIP.Whitelist.Get',
+    Action: 'TerminateInstances',
+    InstanceIds:[]
 }, {
-    serviceType: 'csec'
+    serviceType: 'cvm'
 }, function(error, data) {
-    console.log(data)
+    console.log(data);
+    console.log(data.instanceSet[0].unInstanceId);
+    console.log(data.instanceSet);
 })
 
-var qs = capi.generateQueryString({
-    Region: 'bj',
-    Action: 'NS.BGPIP.Whitelist.Get',
-}, {
-    serviceType: 'csec'
-},function(error,data){
-	console.log(data);
-})
-
-console.log(qs);
