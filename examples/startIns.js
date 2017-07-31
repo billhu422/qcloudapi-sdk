@@ -18,7 +18,7 @@ var capi = new Capi({
 capi.request({
     Region: 'bj',
     Action: 'StartInstances',
-    'instanceIds.0': 'ins-1j9d7p3f'
+    instanceIds: ['ins-1j9d7p3f']
 }, {
     serviceType: 'cvm'
 }, function(error, data) {
