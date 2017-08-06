@@ -8,7 +8,7 @@ var capi = new Capi({
 })
 capi.request({
     Region: 'gz',
-    Action: 'DescribeZones',
+    Action: 'DescribeRegions',
 }, {
     serviceType: 'cvm'
 }, function(error, data) {

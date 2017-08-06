@@ -75,8 +75,93 @@ var params = {
 };
 
 //params.EnhancedService = undefined;
-console.log(JSON.stringify(params,4,4));
-capi.request(JSON.parse(JSON.stringify(params)),{
+//console.log(JSON.stringify(params,4,4));
+
+
+var createInsJson =
+    {
+    Region: undefined,
+    Action: 'RunInstances',
+    Version: "2017-03-12",
+    InstanceChargeType: undefined,
+    InstanceChargePrepaid: {
+        Period: undefined,
+        RenewFlag: undefined
+    },
+    Placement: {
+        Zone: undefined,
+        ProjectId: undefined,
+        HostIds : undefined
+    },
+    InstanceType: undefined,
+    ImageId: undefined,
+    SystemDisk: {
+        DiskType: undefined,
+        DiskId:undefined,
+        DiskSize: undefined
+    },
+    VirtualPrivateCloud: {
+        VpcId: undefined,
+        SubnetId: undefined,
+        AsVpcGateway:undefined,
+        PrivateIpAddresses:undefined
+    },
+    InternetAccessible: {
+        InternetChargeType: undefined,
+        InternetMaxBandwidthOut: undefined,
+        PublicIpAssigned: undefined
+    },
+    InstanceCount: undefined,
+    InstanceName: undefined,
+    LoginSettings: {
+        Password: undefined,
+        KeyIds:undefined,
+        KeepImageLogin: undefined,
+    },
+    EnhancedService: {
+        SecurityService: {
+            Enabled: undefined
+        },
+        MonitorService: {
+            Enabled: undefined
+        }
+    },
+    ClientToken: undefined
+}
+
+createInsJson.Region = 'bj';
+//createInsJson.InstanceChargeType = 'PREPAID';
+createInsJson.InstanceChargePrepaid.Period = 1;
+createInsJson.InstanceChargePrepaid.RenewFlag = 'NOTIFY_AND_AUTO_RENEW';
+createInsJson.Placement = {
+    Zone: 'ap-beijing-1',
+    ProjectId: undefined,
+    HostIds: undefined //['abc']
+}
+createInsJson.InstanceType = 'S1.SMALL1';
+createInsJson.ImageId = 'img-dkwyg6sr';
+/*createInsJson.SystemDisk = {
+    DiskType:'LOCAL_BASIC',
+    DiskId: undefined, //not supported temporarily by qcloud
+    DiskSize: 50
+};*/
+createInsJson.InternetAccessible = {
+//    InternetChargeType : 'BANDWIDTH_PREPAID',
+    InternetMaxBandwidthOut : 1,
+ //   PublicIpAssigned: true
+};
+createInsJson.InstanceCount = 1;
+//createInsJson.InstanceName = 'test';
+/*createInsJson.LoginSettings = {
+    Password: '123%abcABC1',
+    KeyIds:undefined,
+    KeepImageLogin:false
+};*/
+createInsJson.ClientToken = randomstring.generate(64);
+
+console.log(JSON.stringify(createInsJson,4,4));
+
+capi.request(JSON.parse(JSON.stringify(createInsJson)),{
     serviceType: 'cvm'
 }, function(error, data) {
     console.log(data)
