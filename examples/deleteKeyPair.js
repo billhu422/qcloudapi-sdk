@@ -18,26 +18,11 @@ var capi = new Capi({
 
 capi.request({
     Region: 'bj',
-    Action: 'DescribeInstances',
+    Action: 'DeleteKeyPairs',
+    KeyIds:['skey-6c6hll5j'],
+    Version:'2017-03-12'
 }, {
     serviceType: 'cvm'
 }, function(error, data) {
     console.log(data);
-    console.log(data.instanceSet[0].unInstanceId);
-    console.log(data.instanceSet);
-//    console.log(JSON.parse(data)); 
-//    console.log(JSON.stringify(data)['unInstanceId']);
-//    console.log(JSON.stringify(JSON.parse(data),4,4));
 })
-
-var qs = capi.generateQueryString({
-    Region: 'bj',
-    Action: 'DescribeInstances'
-}, {
-    serviceType: 'cvm'
-},function(error,data){
-	console.log(data);
-})
-
-console.log(qs);
-
