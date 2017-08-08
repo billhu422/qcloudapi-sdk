@@ -20,7 +20,7 @@ capi.request({
     Region: 'bj',
     Action: 'CreateKeyPair',
     Version:'2017-03-12',
-    KeyName:'xxx',
+    KeyName:'xxx1',
     ProjectId:'1062715'
 }, {
     serviceType: 'cvm'

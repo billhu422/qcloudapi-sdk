@@ -7,7 +7,6 @@ var capi = new Capi({
 })
 
 capi.request({
-    Region: 'bj',
     Action: 'DescribeProject',
     Version:'2017-03-12',
 }, {

@@ -7,10 +7,10 @@ var capi = new Capi({
 })
 
 capi.request({
-    Region: 'bj',
+//    Region: 'bj',
     Action: 'AddProject',
     Version:'2017-03-12',
-    projectName:'user1'
+    projectName:'user4'
 }, {
     serviceType: 'account'
 }, function(error, data) {
