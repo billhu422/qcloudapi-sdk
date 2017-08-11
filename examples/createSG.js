@@ -20,7 +20,7 @@ capi.request({
     Region: 'bj',
     Action: 'CreateSecurityGroup',
     sgName:'001',//opt
-    sgRemark:'xxx1',//opt
+    sgRemark:'xxx2',//opt
     ProjectId:'1057374'//opt
 }, {
     serviceType: 'dfw'
@@ -30,5 +30,4 @@ capi.request({
     }else{
         console.log(data);
     }
-
 })

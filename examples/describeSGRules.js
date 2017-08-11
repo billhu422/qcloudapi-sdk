@@ -19,7 +19,7 @@ var capi = new Capi({
 capi.request({
     Region: 'bj',
     Action: 'DescribeSecurityGroupPolicys',
-    sgId:'sg-0zofvs3b',//Mandatory
+    sgId:'sg-gspar1yz',//Mandatory
 
 }, {
     serviceType: 'dfw'

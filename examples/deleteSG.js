@@ -18,10 +18,8 @@ var capi = new Capi({
 
 capi.request({
     Region: 'bj',
-    Action: 'CreateSecurityGroup',
-    sgName:'001',//opt
-    sgRemark:'xxx1',//opt
-    ProjectId:'1057374'//opt
+    Action: 'DeleteSecurityGroup',
+    sgId:'sg-4q6bwkjf'
 }, {
     serviceType: 'dfw'
 }, function(error, data) {
